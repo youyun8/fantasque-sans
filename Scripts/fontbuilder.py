@@ -3,8 +3,6 @@
 # LICENSE: MIT
 # vim: sts=4 sw=4 ts=4 et
 
-from past.builtins import xrange
-
 import fontforge
 from itertools import compress
 import os
@@ -72,9 +70,9 @@ def permutations():
     bitmap_max = 1 << count
 
     # Iterate over all possible permutations
-    for i in xrange(bitmap_max):
+    for i in range(bitmap_max):
         # Map the iteration's permutations using a bitmap
-        bitmap = [i >> n & 1 for n in xrange(count)]
+        bitmap = [i >> n & 1 for n in range(count)]
         for opts in _expand_options(bitmap):
             yield(int(float(i)/bitmap_max*100), opts)
 
@@ -151,6 +149,21 @@ def Bearing(left=0, right=0):
             if right != 0:
                 glyph.right_side_bearing += right
     return bearing_op
+
+def Weight(embolden):
+    """Adjusts stroke weight while keeping monospace advance width"""
+    def weight_op(fnt):
+        if embolden == 0:
+            return
+        for glyph in fnt.glyphs():
+            if len(glyph.foreground) == 0:
+                continue
+            orig_width = glyph.width
+            glyph.changeWeight(embolden, "auto", 0, 0, "squish", 1, 1)
+            glyph.removeOverlap()
+            glyph.round()
+            glyph.width = orig_width
+    return weight_op
 
 def Swap(glyph1, glyph2):
     """Swaps the places of two glyphs"""

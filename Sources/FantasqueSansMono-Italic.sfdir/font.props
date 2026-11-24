@@ -1,14 +1,14 @@
-SplineFontDB: 3.0
+SplineFontDB: 3.2
 FontName: FantasqueSansMono-Italic
 FullName: Fantasque Sans Mono Italic
 FamilyName: Fantasque Sans Mono
-Weight: Book
+Weight: Regular
 Copyright: Created by Jany Belluz with FontForge 2.0 (http://fontforge.sf.net)
 UComments: "2013-9-13: Created."
 Version: 1.8.0
 ItalicAngle: -11
-UnderlinePosition: -192
-UnderlineWidth: 96
+UnderlinePosition: -77
+UnderlineWidth: 156
 Ascent: 1650
 Descent: 398
 InvalidEm: 0
@@ -22,7 +22,7 @@ OS2Version: 3
 OS2_WeightWidthSlopeOnly: 1
 OS2_UseTypoMetrics: 1
 CreationTime: 1379052706
-ModificationTime: 1573932975
+ModificationTime: 1795503368
 PfmFamily: 49
 TTFWeight: 400
 TTFWidth: 5

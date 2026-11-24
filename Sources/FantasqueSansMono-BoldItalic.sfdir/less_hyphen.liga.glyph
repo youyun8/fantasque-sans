@@ -2,7 +2,7 @@ StartChar: less_hyphen.liga
 Encoding: 57633 57633 991
 Width: 1060
 VWidth: 4
-Flags: WO
+Flags: W
 HStem: 387 245<-431 979>
 LayerCount: 2
 Fore

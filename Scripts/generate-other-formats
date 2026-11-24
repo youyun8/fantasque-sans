@@ -4,8 +4,7 @@ SCRIPTS=$(cd "$(dirname $0)" && pwd)
 name=$1
 basename=$(basename "$name" .sfdir)
 
-# TODO determine perfect parameters
-ttfautohint "TTF/${basename}.ttf" "TTF/${basename}.hinted.ttf"
+ttfautohint --stem-width-mode=qsq --windows-compatibility --no-info --increase-x-height=14 --composites "TTF/${basename}.ttf" "TTF/${basename}.hinted.ttf"
 mv "TTF/${basename}.hinted.ttf" "TTF/${basename}.ttf"
 sfnt2woff "TTF/${basename}.ttf"
 mv "TTF/${basename}.woff" Webfonts

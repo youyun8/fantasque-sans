@@ -1,8 +1,9 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python3
 # Adapted from https://github.com/larsenwork/monoid
 # Copyright (c) 2015, Andreas Larsen and contributors.
 # vim: sts=4 sw=4 ts=4 et
 
+from __future__ import print_function
 import sys
 if len(sys.argv) < 5:
     usage = """Build should be run with 4 arguments:
@@ -12,7 +13,7 @@ if len(sys.argv) < 5:
     Third: The .sfdir for the font
     Fourth: The output directory
     """
-    print >> sys.stderr, usage
+    print(usage, file=sys.stderr)
     exit(1)
 
 from fontbuilder import *
@@ -50,6 +51,7 @@ option('NoLoopK', 'No loop k', SwapLookup('ss01'))
 # # option('Squeeze', 'Squeezed capitals with diacritics', SwapLookup("ss14"))
 # # no calt
 # option('NoCalt', 'Turn off contextual alternates', DropCAltAndLiga())
+# option('Medium', 'Slightly thicker strokes (~8.7% em)', Weight(10))
 
 # Build options in
 build_batch(output, sys.argv[3], int(sys.argv[1]), int(sys.argv[2]))

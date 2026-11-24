@@ -1,4 +1,4 @@
-SplineFontDB: 3.0
+SplineFontDB: 3.2
 FontName: FantasqueSansMono-Bold
 FullName: Fantasque Sans Mono Bold
 FamilyName: Fantasque Sans Mono
@@ -22,7 +22,7 @@ OS2Version: 3
 OS2_WeightWidthSlopeOnly: 1
 OS2_UseTypoMetrics: 1
 CreationTime: 1379052706
-ModificationTime: 1573932820
+ModificationTime: 1795503368
 PfmFamily: 49
 TTFWeight: 700
 TTFWidth: 5
